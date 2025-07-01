@@ -32,7 +32,218 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
+    transform: rotate(360deg);
+  }
+}
+
+.dashboard-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #23243a 0%, #23243a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+}
+
+.dashboard-container {
+  background: rgba(36, 38, 58, 0.98);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  padding: 32px 40px 40px 40px;
+  min-width: 800px;
+  max-width: 900px;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  background: rgba(44, 48, 74, 0.7);
+  border-radius: 16px;
+  padding: 24px 32px;
+  box-shadow: 0 2px 8px 0 rgba(31, 38, 135, 0.08);
+}
+
+.dashboard-title-row {
+  display: flex;
+  align-items: center;
+}
+
+.dashboard-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #a18fff 0%, #3ee9c7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-left: 8px;
+}
+
+.dashboard-status.connected {
+  background: #1e3a2e;
+  color: #3ee9c7;
+  border-radius: 20px;
+  padding: 10px 28px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: 0 0 0 2px #3ee9c7 inset;
+  display: flex;
+  align-items: center;
+}
+
+.dashboard-status-dot {
+  width: 12px;
+  height: 12px;
+  background: #3ee9c7;
+  border-radius: 50%;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.dashboard-stats {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+.dashboard-card {
+  flex: 1;
+  background: rgba(44, 48, 74, 0.95);
+  border-radius: 16px;
+  padding: 32px 0 24px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2px 8px 0 rgba(31, 38, 135, 0.08);
+}
+
+.dashboard-card-value {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #7fd7ff;
+}
+
+.dashboard-card-label {
+  font-size: 1.2rem;
+  color: #b6c2e2;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.dashboard-live {
+  background: rgba(44, 48, 74, 0.95);
+  border-radius: 16px;
+  padding: 32px 0 32px 0;
+  margin-top: 18px;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2px 8px 0 rgba(31, 38, 135, 0.08);
+}
+
+.dashboard-clear-btn {
+  background: linear-gradient(90deg, #a18fff 0%, #3ee9c7 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 32px;
+  margin-bottom: 18px;
+  margin-left: 12px;
+  margin-top: -10px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px 0 rgba(31, 38, 135, 0.08);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.dashboard-clear-btn:hover {
+  background: linear-gradient(90deg, #3ee9c7 0%, #a18fff 100%);
+  box-shadow: 0 4px 16px 0 rgba(31, 38, 135, 0.18);
+}
+
+.dashboard-live-title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 24px;
+  margin-top: 0;
+  align-self: flex-start;
+  margin-left: 32px;
+}
+
+.dashboard-waiting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.dashboard-mailbox {
+  margin-bottom: 18px;
+}
+
+.dashboard-waiting-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.dashboard-waiting-desc {
+  font-size: 1.05rem;
+  color: #b6c2e2;
+}
+
+.dashboard-notifications-list {
+  list-style: none;
+  padding: 0 32px;
+  margin: 0;
+  width: 100%;
+}
+
+.dashboard-notification-item {
+  color: #fff;
+  font-size: 1.08rem;
+  padding: 10px 0;
+  border-bottom: 1px solid #35395a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard-notification-time {
+  color: #7fd7ff;
+  font-size: 0.95rem;
+  margin-left: 12px;
+}
+
+.dashboard-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.dashboard-spinner-circle {
+  width: 38px;
+  height: 38px;
+  border: 4px solid #3ee9c7;
+  border-top: 4px solid #a18fff;
+  border-radius: 50%;
+  animation: dashboard-spin 1s linear infinite;
+}
+
+@keyframes dashboard-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
     transform: rotate(360deg);
   }
 }
