@@ -41,7 +41,6 @@ const App = () => {
     'EEx9rjSNWMSdCpfeNKB3jCMkYe3cHvF6YZkCudNNLzXd',
     'ChDvn2ckvmXE5CYQAGu5gh2UrK3q2QtzxpDBPajZhzBT',
     'GW466wmGyqmsz71ZbmLnWCiWM3Z4CuKVrAdSV5k177cV',
-    // Add more if needed
   ];
 
   // Load notifications from localStorage on mount
